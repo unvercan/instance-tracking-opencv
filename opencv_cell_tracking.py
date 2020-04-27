@@ -100,7 +100,7 @@ def track(sequence_directory, tracker_names, instance_with_templates, image_exte
     trackers = dict()
     for tracker_name in tracker_names:
         if str(tracker_name) not in opencv_trackers.keys():
-            raise ValueError('Unsupported opencv tracker:', str(tracker_name))
+            raise ValueError('Unsupported OpenCV tracker:', str(tracker_name))
         else:
             tracker_method = opencv_trackers[tracker_name]
             trackers[tracker_name] = tracker_method
@@ -189,8 +189,7 @@ def track(sequence_directory, tracker_names, instance_with_templates, image_exte
                     .format(frame=frame_name, left=left, top=top, width=width,
                             height=height, separator=output_separator)
                 lines.append(line)
-            file_name = str(sequence_name) + "_" + str(tracker_name) + '_' + \
-                        str(instance_name) + '.' + output_extension
+            file_name = str(sequence_name) + "_" + str(tracker_name) + '_' + str(instance_name) + '.' + output_extension
             file_path = os.path.join(paths['results_' + str(sequence_name) + '_' + str(tracker_name)], file_name)
             save_file(file_path=file_path, lines=lines, text_or_binary='text', encoding='utf_8')
             if info:
@@ -208,8 +207,8 @@ def main():
 
     # sequences
     sequences = dict()
-    sequences['30fps'] = 'C:\\dataset\\cell_tracking\\data\\30fps'
-    sequences['30fps_denoised'] = 'C:\\dataset\\cell_tracking\\data\\30fps_denoised\\seq'
+    sequences['30fps'] = 'C:\\dataset\\cell_tracking\\30fps'
+    sequences['30fps_denoised'] = 'C:\\dataset\\cell_tracking\\30fps_denoised'
 
     # trackers
     tracker_names = ['boosting', 'mil', 'kcf', 'tld', 'medianflow', 'mosse', 'csrt']
