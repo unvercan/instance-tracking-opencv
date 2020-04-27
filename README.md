@@ -1,2 +1,2 @@
-# opencv-cell-tracking
-- Cell Tracking using OpenCV 
+# opencv-trackers
+- Tracking using OpenCV 
