@@ -1,2 +1,2 @@
 # opencv-trackers
-- Tracking using OpenCV 
+- Instance tracking with OpenCV tracker algorithms.
